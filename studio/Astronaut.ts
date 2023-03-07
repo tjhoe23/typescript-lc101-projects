@@ -1,7 +1,7 @@
 import { Payload } from "./Payload";
 
 export class Astronaut implements Payload {
-mass: number;
+massKg: number;
 name: string;
 
     constructor (massKg: number, name: string) {
