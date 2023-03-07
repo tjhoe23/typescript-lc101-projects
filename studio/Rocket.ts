@@ -16,7 +16,7 @@ export class Rocket implements Payload {
 
         sumMass (items: Payload[]): number {
             let sum: number = 0;
-            for (let i=0; i < items.length; i++) {
+            for (let i = 0; i < items.length; i++) {
                 sum += items[i].massKg;
             }
             return sum;
@@ -32,6 +32,15 @@ export class Rocket implements Payload {
 
         addCargo(cargo: Cargo): boolean {
             if (this.canAdd(cargo)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        addAstronaut(astronaut: Astronaut): boolean {
+            if (this.canAdd(astronaut)) {
+                this.astronauts.push(astronaut);
                 return true;
             } else {
                 return false;
